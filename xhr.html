@@ -1,0 +1,27 @@
+<html lang="en">
+  <head>
+    <title>XHR</title>
+  </head>
+  <body>
+    <button id="syncBtn">同步</button>
+    <button id="asyncBtn">非同步</button>
+    <button id="countBtn">測試按鈕</button>
+    <div id="count">0</div>
+    <div id="response">準備要顯示訊息</div>
+
+    <script>
+      var response = document.getElementById("response");
+      var syncBtn = document.getElementById("syncBtn");
+      syncBtn.addEventListener("click", function () {});
+
+      var asyncBtn = document.getElementById("asyncBtn");
+      asyncBtn.addEventListener("click", function () {});
+
+      var countBtn = document.getElementById("countBtn");
+      var count = document.getElementById("count");
+      countBtn.addEventListener("click", function () {
+        count.innerHTML = parseInt(count.innerHTML, 10) + 1;
+      });
+    </script>
+  </body>
+</html>
