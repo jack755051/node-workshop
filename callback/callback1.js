@@ -11,7 +11,7 @@ let doWork = function (job, timer, cb) {
   
   let dt = new Date();
   console.log(`開始工作 at ${dt.toISOString()}`);
-  // 刷牙 -> 吃早餐 -> 寫功課
+  // 刷牙 -> 吃早餐 -> 寫功課 ->洗澡
   
   // 解決: 接續做的工作
   // ---> 動作如果要接續著做，只能把下一個動作放在上一個動作的 callback
@@ -35,6 +35,13 @@ let doWork = function (job, timer, cb) {
               console.error("發生錯誤了:", err);
             } else {
               console.log(data);
+              doWork("洗澡", 3000, function (err, data) {
+                if (err) {
+                  console.error("發生錯誤了:", err);
+                } else {
+                  console.log(data);
+                }
+            });
             }
           });
         }
