@@ -17,7 +17,7 @@ let dt = new Date();
 console.log(`開始工作 at ${dt.toISOString()}`);
 
 
-let job1 = doWork("刷牙", 3000, true);
+let job1 = doWork("刷牙", 1000, true);
 job1
   .then((result) => {
     console.log("第 1 個函式被呼叫了", result);
@@ -31,7 +31,7 @@ job1
 
 // job.then(()=>{處理成功}).catch(()=>{處理失敗});
 
-let job2 = doWork("洗澡", 3000, false);
+let job2 = doWork("吃早餐", 1000, true);
 job2
   .then((result) => {
     console.log("第 1 個函式被呼叫了", result);

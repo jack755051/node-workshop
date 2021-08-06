@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <title>XHR</title>
+  </head>
+  <body>
+    <button id="syncBtn">同步</button>
+    <button id="asyncBtn">非同步</button>
+    <button id="promiseBtn">promise</button>
+    <button id="countBtn">測試按鈕</button>
+    <div id="count">0</div>
+    <div id="response">準備要顯示訊息</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">   
+
+      var response = document.getElementById("response");
+      var syncBtn = document.getElementById("syncBtn");
+      syncBtn.addEventListener("click", function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function() {
+            if(this.status === 200) {
+              // 顯示成功的訊息 this.responseText
+            } else {
+              // 不是200，那顯示一下 this.status
+            }
+        }
+
+        // method, url, async (預設值是true)
+        // 同步: false
+        // 非同步(異步): true
+        xhr.open("GET", "http://18.237.113.31:3000/", false);
+        xhr.send(); 
+      });
+
+      var asyncBtn = document.getElementById("asyncBtn");
+      asyncBtn.addEventListener("click", function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function() {
+            if(this.status === 200) {
+              // 顯示成功的訊息 this.responseText
+            } else {
+              // 不是200，那顯示一下 this.status
+            }
+        }
+
+        var promiseBtn = document.getElementById("promiseBtn");
+        
+
+        // method, url, async (預設值是true)
+        // 同步: false
+        // 非同步(異步): true
+        xhr.open("GET", "http://18.237.113.31:3000/", true);
+        xhr.send();
+      });
+
+      var countBtn = document.getElementById("countBtn");
+      var count = document.getElementById("count");
+      countBtn.addEventListener("click", function () {
+        count.innerHTML = parseInt(count.innerHTML, 10) + 1;
+      });
+    </script>
+  </body>
+</html>
