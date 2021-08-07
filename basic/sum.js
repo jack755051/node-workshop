@@ -15,5 +15,4 @@ function sum(n){
 
 console.log(sum1(10),sum(10));
 console.log(sum1(3),sum(3));
-
 console
