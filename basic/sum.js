@@ -7,9 +7,9 @@ function sum1(n){
 function sum(n){
     let result2 = 0;
     for(var i=1;i<=n;i++){
-            result+=i;
+            result2+=i;
     }
-    return result;
+    return result2;
 }
 
 
