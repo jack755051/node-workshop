@@ -14,7 +14,7 @@ async function asyncF() {
   asyncF();
   console.log(5);
 
-  //順序 : 1->2->3->4->5
+  //順序 : 4->1->2->3->5
   //非同步函數
 
   //因為async / await 關係,會等到接收完回傳值後繼續函式運行
