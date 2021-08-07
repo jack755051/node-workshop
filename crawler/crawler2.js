@@ -2,14 +2,12 @@ const axios = require ("axios");
 const moment = require ("moment");
 //讀取檔案
 const fs = require("fs");
-const { resolve } = require("path");
-const { rejects } = require("assert");
 
 
-new Promise((resolve,rejects)=>{
+new Promise((resolve,reject)=>{
     fs.readFile("stock.txt","utf-8",(err,stokeCode)=>{
         if(err){
-            rejects(err)
+            reject(err)
         }else{
             resolve(stokeCode)
         }

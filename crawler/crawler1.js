@@ -2,8 +2,6 @@ const axios = require ("axios");
 const moment = require ("moment");
 //讀取檔案
 const fs = require("fs");
-const { resolve } = require("path");
-const { rejects } = require("assert");
 
 
 fs.readFile("stock.txt","utf-8",(err,stokeCode)=>{
