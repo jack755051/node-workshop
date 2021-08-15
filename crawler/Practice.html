@@ -1,0 +1,24 @@
+
+<script>
+function sendReq(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve("successReq");
+            reject("errorReq");
+        },2000);
+    });
+}
+
+async function getUserData(){
+    try{
+        let username = await fetch("https://jsonplaceholder.typicode.com/users");
+        username = await username.json();
+        console.log(username);
+    }
+    catch(e){
+        console.log(`ErrorMeg:${e}`)
+    }
+}
+
+getUserData();
+</script>

@@ -20,7 +20,7 @@ function secondCode(stokeCode){
         params:{
             response:"json",
             Date:moment().format("YYYYMMDD"),
-            stockNo:stokeCode,
+            stockNo:stokeCode.trim(),
         },
     })
 }
@@ -30,11 +30,26 @@ async function thirdCode(){
         const firstC = await firstCode();
         const secondC = await secondCode(firstC);
         // const [firstData, secondData] = await Promise.all([firstC, secondC])
-        console.log(secondC.data.title);
+        console.log(secondC.data);
     }
-    catch(e){
+    catch(e){   
         console.log(e)
     }
 }
 
 thirdCode();
+// .then((stokeCode)=>{
+//     return axios.get("https://www.twse.com.tw/exchangeReport/STOCK_DAY",{
+//         params:{
+//             response:"json",
+//             Date:moment().format("YYYYMMDD"),
+//             stockNo:stokeCode,
+//         },
+//     })
+// })
+// .then((response)=>{
+//     console.log(response.data.title);
+// })
+// .catch((err)=>{
+//     console.log(err);
+// })

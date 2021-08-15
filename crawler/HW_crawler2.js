@@ -65,7 +65,6 @@ async function doWork(){
         console.log(insertResult); 
     }
     catch(e){  ;
-        console.error("*****************");
         console.error(e)
     }
     finally{

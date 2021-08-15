@@ -11,7 +11,7 @@ new Promise((resolve,reject)=>{
         }else{
             resolve(stokeCode)
         }
-    })
+    });
 })
 .then((stokeCode)=>{
     return axios.get("https://www.twse.com.tw/exchangeReport/STOCK_DAY",{

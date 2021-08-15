@@ -28,7 +28,8 @@ module.exports = {
     showBrand,
     showModel,
     showColor,
-    showPrice
+    showPrice,
+    showOwner,
   };
 
 
