@@ -1,17 +1,26 @@
-const express = require("express");
+const express = require('express');
 
-// 利用 express 建立了一個 express application
+// 利用 express 建立 express application
 let app = express();
 
-// HTTP Method: get, post, put, patch, delete
-app.get("/", function (request, response, next) {
-  response.send("Hello");
+app.use((req, res, next) => {
+    console.log('Check 123');
+    next();
 });
-app.get("/about", function (request, response, next) {
-    response.send("about");
-  });
 
+app.use((req, res, next) => {
+    console.log(req.method);
+    next();
+});
+
+app.get('/', (req, res, next) => {
+    res.send('Hello');
+});
+
+app.get('/about', (req, res, next) => {
+    res.send('About Us');
+});
 
 app.listen(3000, function () {
-  console.log("我們的 web server 啟動了～");
+    console.log('Listen on port 3000');
 });
